@@ -4,7 +4,7 @@ C2T=c2t
 
 START_ADDRESS=2000
 
-CFLAGS= -O -t apple2 --start-addr 0x$(START_ADDRESS) -Wl -D__EXEHDR__=0
+CFLAGS= -t apple2 --start-addr 0x$(START_ADDRESS) -Wl -D__EXEHDR__=0
 
 SRC_DIR=src
 OBJ_DIR=obj

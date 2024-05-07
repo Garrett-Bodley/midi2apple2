@@ -1,0 +1,11 @@
+; da65 V2.18 - N/A
+; Created:    2024-05-06 16:29:59
+; Input file: bin/main
+; Page:       1
+
+
+        .setcpu "6502"
+
+        ldx     #$FF
+        txs
+        .byte   $20
