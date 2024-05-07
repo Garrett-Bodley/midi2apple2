@@ -2,6 +2,7 @@
 #include <stdbool.h>
 
 #include "../include/note.h"
+#include "../include/subtract_sandbox.h"
 
 int main(void)
 {
@@ -30,7 +31,9 @@ int main(void)
 
   // asm("lda $64");
   // asm("jsr $fca8");
-  note(0);
+  subtract_sandbox();
+  while(true){};
+  // note(0);
   while(true){
     asm("BIT $C030");
     asm("BIT $C030");
