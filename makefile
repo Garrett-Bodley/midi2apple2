@@ -14,9 +14,10 @@ DISK_IMAGE=lib/TEMPLATE.dsk
 
 TARGET=$(BIN_DIR)/main
 
-SOURCES:=$(wildcard $(SRC_DIR)/*.c)
-OBJECTS=$(SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
-ASM=$(SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.asm)
+C_SOURCES:=$(wildcard $(SRC_DIR)/*.c)
+ASM_SOURCES:=$(wildcard $(SRC_DIR)/*.asm)
+OBJECTS=$(C_SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o) $(ASM_SOURCES:${SRC_DIR}/%.asm=$(OBJ_DIR)/%.o)
+ASM=$(C_SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.asm)
 
 all: target wav aif disk
 
@@ -41,8 +42,12 @@ uninstall:
 $(OBJ_DIR)/%.asm: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	$(CC) -S  $(CFLAGS) -c -o $@ $<
 
-# Rule to make object files
+# Rule to make object files from .c files
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+# Rule to make object files from .asm files
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.asm | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 # Rule to make target
