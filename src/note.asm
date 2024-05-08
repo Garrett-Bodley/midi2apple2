@@ -11,8 +11,8 @@
 	.importzp	tmp1, tmp2, tmp3, tmp4, ptr1, ptr2, ptr3, ptr4
 	.macpack	longbranch
 	.forceimport	__STARTUP__
-	.import		_printf
 	.export		_note
+	.export		_rest
 
 .segment	"RODATA"
 
@@ -21,46 +21,21 @@
 ; ---------------------------------------------------------------
 
 .segment	"CODE"
-
-.proc	_note: near
-
-.segment	"CODE"
 ; receive integer argument note 0-61
 ; wall of nop
 _note:
-  ldx #1
-  jmp l0
-Note0:
-  .REPEAT 3000
-  nop
-  .ENDREP
-Note1:
-  .REPEAT 4818
+  .REPEAT 3902
   nop
   .ENDREP
   bit $C030
+  dec $02
+  beq Exit
   jmp ($00)
-l0:
-  cpx #0
-  bne l1
-  lda #<Note0
-  sta $00
-  lda #>Note0
-  sta $01
-l1:
-  cpx #1
-  bne l2
-  lda #<Note1
-  sta $00
-  lda #>Note1
-  sta $01
-l2:
-  jmp ($00)
+Exit:
+  rts
 
-
-
-.endproc
-
-; .proc _jumpTable
-
-; duration loop
+_rest:
+  .REPEAT 1000
+  nop
+  .ENDREP
+  rts
