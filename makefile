@@ -14,8 +14,10 @@ DISK_IMAGE=lib/TEMPLATE.dsk
 
 TARGET=$(BIN_DIR)/main
 
-C_SOURCES:=$(wildcard $(SRC_DIR)/*.c)
-ASM_SOURCES:=$(wildcard $(SRC_DIR)/*.asm)
+# C_SOURCES:=$(wildcard $(SRC_DIR)/*.c)
+C_SOURCES:= $(SRC_DIR)/main.c
+# ASM_SOURCES:=$(wildcard $(SRC_DIR)/*.asm)
+ASM_SOURCES:=$(SRC_DIR)/note.asm
 OBJECTS=$(C_SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o) $(ASM_SOURCES:${SRC_DIR}/%.asm=$(OBJ_DIR)/%.o)
 ASM=$(C_SOURCES:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.asm)
 

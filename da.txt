@@ -1,0 +1,9565 @@
+; da65 V2.18 - N/A
+; Created:    2024-05-08 14:27:18
+; Input file: bin/main
+; Page:       1
+
+
+        .setcpu "6502"
+
+L0000           := $0000
+L03D0           := $03D0
+L2034           := $2034
+L2045           := $2045
+L2057           := $2057
+L2061           := $2061
+L2072           := $2072
+L2164           := $2164
+L2C6F           := $2C6F
+L3EFF           := $3EFF
+L3F06           := $3F06
+L3F15           := $3F15
+L3F1F           := $3F1F
+L3F20           := $3F20
+L3F2A           := $3F2A
+L3F3A           := $3F3A
+L3F3E           := $3F3E
+L3F45           := $3F45
+L3F48           := $3F48
+L3F5B           := $3F5B
+L3F67           := $3F67
+L3F72           := $3F72
+L3F84           := $3F84
+L3F90           := $3F90
+L3FCE           := $3FCE
+L3FD8           := $3FD8
+L3FE6           := $3FE6
+L3FF0           := $3FF0
+L3FFB           := $3FFB
+L4013           := $4013
+L4020           := $4020
+L402D           := $402D
+L4060           := $4060
+L40E5           := $40E5
+L412E           := $412E
+L4155           := $4155
+L415B           := $415B
+L427F           := $427F
+L42DF           := $42DF
+L42E9           := $42E9
+L42F6           := $42F6
+L42FC           := $42FC
+L4303           := $4303
+L431A           := $431A
+L4326           := $4326
+L433C           := $433C
+L4356           := $4356
+L4363           := $4363
+L4370           := $4370
+L437D           := $437D
+L4393           := $4393
+L440E           := $440E
+L4416           := $4416
+L4424           := $4424
+L442B           := $442B
+L4432           := $4432
+L4459           := $4459
+L4471           := $4471
+L4489           := $4489
+L44CA           := $44CA
+L44CD           := $44CD
+L4501           := $4501
+L4506           := $4506
+L454D           := $454D
+L4557           := $4557
+L4585           := $4585
+L459B           := $459B
+L45A9           := $45A9
+L45DC           := $45DC
+L45E3           := $45E3
+L45E5           := $45E5
+L45FD           := $45FD
+L4617           := $4617
+L4624           := $4624
+L4647           := $4647
+L4654           := $4654
+L466A           := $466A
+L4693           := $4693
+L46A2           := $46A2
+L4718           := $4718
+L4741           := $4741
+L47B1           := $47B1
+L48F0           := $48F0
+L48F7           := $48F7
+L491C           := $491C
+L4940           := $4940
+L4989           := $4989
+L4995           := $4995
+L6F57           := $6F57
+LBF00           := $BF00
+LD39A           := $D39A
+        ldx     #$FF
+        txs
+        jsr     L4995
+        jsr     L47B1
+        jsr     L4303
+        ldx     #$19
+        lda     #$20
+        jsr     L4326
+        bit     $C082
+        jsr     L431A
+        ldx     #$02
+LD606:  lda     $4986,x
+        sta     $03F2,x
+        dex
+        bpl     LD606
+        ldx     #$19
+LD611:  lda     $496C,x
+        sta     $80,x
+        dex
+        bpl     LD611
+        ldx     #$FF
+        txs
+        jmp     L491C
+
+        bit     $C082
+        jsr     LFDED
+        bit     $C080
+        rts
+
+        jsr     L45E5
+        jsr     L4416
+        rts
+
+        lda     #$D4
+        ldx     #$47
+        jsr     L45E5
+        ldy     #$02
+        jsr     L45A9
+        jsr     L3F06
+        jmp     L2057
+
+        jmp     L2057
+
+        ldx     #$00
+        lda     #$00
+        jmp     L2061
+
+        rts
+
+        jsr     L45E5
+        ldx     #$01
+        lda     #$00
+        jsr     L45E5
+        jsr     L4356
+        jmp     L3EFF
+
+        bit     $C030
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        nop
+        jmp     L2072
+
+        jsr     L4424
+        rts
+
+        lda     #$E3
+        ldx     #$47
+        jsr     L45E5
+        ldy     #$02
+        jsr     L45A9
+        jmp     L3F15
+
+        jmp     L3F15
+
+        ldx     #$00
+        lda     #$00
+        jmp     L3F1F
+
+        rts
+
+        jsr     L42DF
+        sta     L4989
+        lda     #$FF
+        tax
+        rts
+
+        sta     L4989
+        tax
+        beq     LF524
+        jsr     L4585
+        jsr     L42DF
+        lda     #$FF
+        tax
+LF524:  rts
+
+        ldy     #$00
+        lda     ($96),y
+        inc     $96
+        bne     LF52F
+        inc     $97
+LF52F:  rts
+
+        lda     L4995
+        sta     $4990
+        jsr     L3FE6
+        lda     #$90
+        ldx     #$49
+        jsr     L45E5
+        jsr     L45DC
+        jmp     L48F0
+
+        lda     $94
+        sec
+        sbc     #$02
+        sta     $94
+        bcs     LF551
+        dec     $95
+LF551:  rts
+
+        lda     $499A
+        bne     LF568
+        jsr     L3F84
+        jmp     L42FC
+
+        lda     $499A
+        bne     LF568
+        jsr     L3F84
+        jmp     L42F6
+
+LF568:  jsr     L3F84
+        sta     $82
+        stx     $83
+        jsr     L3F5B
+        ldy     #$01
+        lda     ($94),y
+        tax
+        dey
+        lda     ($94),y
+        rts
+
+        ldy     #$00
+        sty     $88
+        sty     $89
+LF581:  lda     ($96),y
+        sec
+        sbc     #$30
+        bcc     LF5B4
+        cmp     #$0A
+        bcs     LF5B4
+        jsr     L3F3E
+        pha
+        lda     $88
+        ldx     $89
+        asl     $88
+        rol     $89
+        asl     $88
+        rol     $89
+        adc     $88
+        sta     $88
+        txa
+        adc     $89
+        sta     $89
+        asl     $88
+        rol     $89
+        pla
+        adc     $88
+        sta     $88
+        bcc     LF581
+        inc     $89
+        bcs     LF581
+LF5B4:  lda     $88
+        ldx     $89
+        rts
+
+        ldy     $499C
+        inc     $499C
+        sta     $499D,y
+        rts
+
+        lda     #$9D
+        ldx     #$49
+        clc
+        adc     $499C
+        bcc     LF5CE
+        inx
+LF5CE:  jmp     L45E5
+
+        lda     $98
+        ldx     $99
+        jmp     L45E5
+
+LF5D8:  jsr     L3F45
+        inc     $4996
+        bne     LF5D8
+        inc     $4997
+        bne     LF5D8
+        rts
+
+        jsr     L3FE6
+        lda     $49B1
+        ldx     $49B2
+        jsr     L45E5
+        lda     $49B3
+        ldx     $49B4
+        jsr     L45E5
+        jmp     L48F0
+
+        sty     $88
+        jsr     L4459
+        jsr     L3FD8
+        lda     $88
+        jmp     L4489
+
+        sty     $88
+        jsr     L4459
+        jsr     L3FD8
+        lda     $88
+        jmp     L44CA
+
+        pha
+        ldy     #$05
+LF61B:  lda     $94,y
+        sta     $498A,y
+        dey
+        bpl     LF61B
+        pla
+        sta     $94
+        stx     $95
+        jsr     L440E
+        sta     $96
+        stx     $97
+        jsr     L440E
+        sta     $98
+        stx     $99
+        lda     #$00
+        tay
+        sta     ($98),y
+        iny
+        sta     ($98),y
+        iny
+        lda     ($98),y
+        sta     $48F1
+        iny
+        lda     ($98),y
+        sta     $48F2
+        lda     $96
+        sta     $88
+        lda     $97
+        sta     $89
+        ldy     #$00
+LF655:  lda     ($96),y
+        beq     LF664
+        cmp     #$25
+        beq     LF664
+        iny
+        bne     LF655
+        inc     $97
+        bne     LF655
+LF664:  tya
+        clc
+        adc     $96
+        sta     $96
+        bcc     LF66E
+        inc     $97
+LF66E:  sec
+        sbc     $88
+        sta     $8A
+        lda     $97
+        sbc     $89
+        sta     $8B
+        ora     $8A
+        beq     LF6A2
+        jsr     L4370
+        ldy     #$05
+        lda     $99
+        sta     ($80),y
+        dey
+        lda     $98
+        sta     ($80),y
+        dey
+        lda     $89
+        sta     ($80),y
+        dey
+        lda     $88
+        sta     ($80),y
+        dey
+        lda     $8B
+        sta     ($80),y
+        dey
+        lda     $8A
+        sta     ($80),y
+        jsr     L48F0
+LF6A2:  jsr     L3F3A
+        tax
+        bne     LF6B3
+        ldx     #$05
+LF6AA:  lda     $498A,x
+        sta     $94,x
+        dex
+        bpl     LF6AA
+        rts
+
+LF6B3:  cmp     #$25
+        bne     LF6C0
+        lda     ($96),y
+        cmp     #$25
+        bne     LF6C6
+        jsr     L3F3E
+LF6C0:  jsr     L3F48
+        jmp     L4060
+
+LF6C6:  lda     #$00
+        ldx     #$0B
+LF6CA:  sta     $4991,x
+        dex
+        bpl     LF6CA
+        lda     ($96),y
+        cmp     #$2D
+        bne     LF6DB
+        stx     $4991
+        beq     LF6F4
+LF6DB:  cmp     #$2B
+        bne     LF6E4
+        stx     $4992
+        beq     LF6F4
+LF6E4:  cmp     #$20
+        bne     LF6ED
+        stx     $4993
+        beq     LF6F4
+LF6ED:  cmp     #$23
+        bne     LF6FA
+        stx     $4994
+LF6F4:  jsr     L3F3E
+        jmp     L40E5
+
+LF6FA:  ldx     #$20
+        cmp     #$30
+        bne     LF706
+        tax
+        jsr     L3F3E
+        lda     ($96),y
+LF706:  stx     L4995
+        cmp     #$2A
+        bne     LF716
+        jsr     L3F3E
+        jsr     L3F84
+        jmp     L412E
+
+LF716:  jsr     L3F90
+        sta     $4996
+        stx     $4997
+        sty     $4998
+        sty     $4999
+        lda     ($96),y
+        cmp     #$2E
+        bne     LF746
+        jsr     L3F3E
+        lda     ($96),y
+        cmp     #$2A
+        bne     LF73D
+        jsr     L3F3E
+        jsr     L3F84
+        jmp     L4155
+
+LF73D:  jsr     L3F90
+        sta     $4998
+        stx     $4999
+LF746:  lda     ($96),y
+        cmp     #$7A
+        beq     LF765
+        cmp     #$68
+        beq     LF765
+        cmp     #$74
+        beq     LF765
+        cmp     #$6A
+        beq     LF760
+        cmp     #$4C
+        beq     LF760
+        cmp     #$6C
+        bne     LF76B
+LF760:  lda     #$FF
+        sta     $499A
+LF765:  jsr     L3F3E
+        jmp     L415B
+
+LF76B:  sty     $499C
+        ldx     #$9D
+        stx     $49B1
+        ldx     #$49
+        stx     $49B2
+        jsr     L3F3E
+        cmp     #$63
+        bne     LF78D
+        jsr     L3F84
+        sta     $499D
+        lda     #$00
+        sta     $499E
+        jmp     L427F
+
+LF78D:  cmp     #$64
+        beq     LF795
+        cmp     #$69
+        bne     LF7C2
+LF795:  ldx     #$00
+        lda     $4993
+        beq     LF79E
+        ldx     #$20
+LF79E:  lda     $4992
+        beq     LF7A5
+        ldx     #$2B
+LF7A5:  stx     $499B
+        jsr     L3F72
+        ldy     $83
+        bmi     LF7BA
+        ldy     $499B
+        beq     LF7BA
+        sty     $499D
+        inc     $499C
+LF7BA:  ldy     #$0A
+        jsr     L4013
+        jmp     L427F
+
+LF7C2:  cmp     #$6E
+        bne     LF7DB
+        jsr     L3F84
+        sta     $88
+        stx     $89
+        ldy     #$00
+        lda     ($98),y
+        sta     ($88),y
+        iny
+        lda     ($98),y
+        sta     ($88),y
+        jmp     L4060
+
+LF7DB:  cmp     #$6F
+        bne     LF806
+        jsr     L3F72
+        ldy     $4994
+        beq     LF7FE
+        pha
+        stx     $90
+        ora     $90
+        ora     $82
+        ora     $83
+        ora     $4998
+        ora     $4999
+        beq     LF7FE
+        lda     #$30
+        jsr     L3FCE
+        pla
+LF7FE:  ldy     #$08
+        jsr     L4013
+        jmp     L427F
+
+LF806:  cmp     #$70
+        bne     LF817
+        ldx     #$00
+        stx     $499A
+        inx
+        stx     $4994
+        lda     #$78
+        bne     LF83E
+LF817:  cmp     #$73
+        bne     LF827
+        jsr     L3F84
+        sta     $49B1
+        stx     $49B2
+        jmp     L427F
+
+LF827:  cmp     #$75
+        bne     LF836
+        jsr     L3F67
+        ldy     #$0A
+        jsr     L4020
+        jmp     L427F
+
+LF836:  cmp     #$78
+        beq     LF83E
+        cmp     #$58
+        bne     LF867
+LF83E:  pha
+        lda     $4994
+        beq     LF84E
+        lda     #$30
+        jsr     L3FCE
+        lda     #$58
+        jsr     L3FCE
+LF84E:  jsr     L3F67
+        ldy     #$10
+        jsr     L4020
+        pla
+        cmp     #$78
+        bne     LF864
+        lda     $49B1
+        ldx     $49B2
+        jsr     L466A
+LF864:  jmp     L427F
+
+LF867:  jmp     L4060
+
+        lda     $49B1
+        ldx     $49B2
+        jsr     L4654
+        sta     $49B3
+        stx     $49B4
+        lda     $4998
+        ora     $4999
+        beq     LF896
+        ldx     $4998
+        cpx     $49B3
+        lda     $4999
+        tay
+        sbc     $49B4
+        bcs     LF896
+        stx     $49B3
+        sty     $49B4
+LF896:  sec
+        lda     $4996
+        sbc     $49B3
+        tax
+        lda     $4997
+        sbc     $49B4
+        bcs     LF8A9
+        lda     #$00
+        tax
+LF8A9:  eor     #$FF
+        sta     $4997
+        txa
+        eor     #$FF
+        sta     $4996
+        lda     $4991
+        bne     LF8BC
+        jsr     L3FF0
+LF8BC:  jsr     L3FFB
+        lda     $4991
+        beq     LF8C7
+        jsr     L3FF0
+LF8C7:  jmp     L4060
+
+        sta     $49B5
+        lda     #$00
+        sta     $49B6
+        rts
+
+        iny
+        pha
+        clc
+        tya
+        adc     $80
+        sta     $80
+        bcc     LF8DF
+        inc     $81
+LF8DF:  pla
+        rts
+
+        ldy     #$FF
+        cpx     #$80
+        bcs     LF8E9
+        ldy     #$00
+LF8E9:  sty     $82
+        sty     $83
+        rts
+
+        lda     $48F3
+        ldx     $48F4
+        jsr     L45E5
+        lda     $48F5
+        ldx     $48F6
+        jsr     L45E5
+        ldy     #$04
+        jmp     L2045
+
+        ldy     #$00
+        beq     LF910
+        lda     #$D2
+        ldx     #$48
+        jmp     L48F7
+
+LF910:  rts
+
+        stx     $03F2
+        sta     $03F3
+        eor     #$A5
+        sta     $03F4
+        rts
+
+        jsr     LBF00
+        adc     $0E
+        pha
+        cpx     #$00
+        bne     LF93C
+        lsr     a
+        tax
+        lda     $4820,x
+        bcc     LF933
+        lsr     a
+        lsr     a
+        lsr     a
+        lsr     a
+        clc
+LF933:  and     #$0F
+        tax
+        lda     $4815,x
+        ldx     #$00
+        rts
+
+LF93C:  sec
+        lda     #$00
+        tax
+        rts
+
+        lda     $80
+        sec
+        sbc     #$02
+        sta     $80
+        bcc     LF94B
+        rts
+
+LF94B:  dec     $81
+        rts
+
+        lda     $80
+        sec
+        sbc     #$04
+        sta     $80
+        bcc     LF958
+        rts
+
+LF958:  dec     $81
+        rts
+
+        lda     $80
+        sec
+        sbc     #$06
+        sta     $80
+        bcc     LF965
+        rts
+
+LF965:  dec     $81
+        rts
+
+        cpx     #$00
+        bne     LF97A
+        cmp     #$08
+        bcs     LF97A
+        asl     a
+        asl     a
+        tay
+        lda     $4920,y
+        beq     LF97A
+        clc
+        rts
+
+LF97A:  lda     #$07
+        sec
+        rts
+
+        sta     $49B7
+        sta     $88
+        stx     $49B8
+        stx     $89
+        ldy     #$01
+        lda     ($88),y
+        and     #$01
+        bne     LF999
+LF990:  lda     #$10
+        jsr     L42DF
+        tax
+        jmp     L4424
+
+LF999:  lda     ($88),y
+        and     #$04
+        bne     LF990
+        ldy     #$00
+        lda     ($88),y
+        ldx     #$00
+        jsr     L45E5
+        ldy     #$09
+        jsr     L45FD
+        ldy     #$07
+        jsr     L45FD
+        ldy     #$09
+        jsr     L442B
+        jsr     L4506
+        cpx     #$00
+        bne     LF9CC
+        cmp     #$00
+        bne     LF9CC
+        ldy     #$05
+        jsr     L442B
+        ldy     #$0A
+        jmp     L42E9
+
+LF9CC:  jsr     L4741
+        cpx     #$FF
+        bne     LF9EB
+        cmp     #$FF
+        bne     LF9EB
+        lda     $49B7
+        sta     $88
+        lda     $49B8
+        sta     $89
+        ldy     #$01
+        lda     ($88),y
+        ora     #$04
+        sta     ($88),y
+        bne     LF990
+LF9EB:  jsr     L45E5
+        ldy     #$05
+        jsr     L442B
+        jsr     L4693
+        jmp     L4424
+
+        ldy     #$01
+        lda     ($80),y
+        tax
+        dey
+        lda     ($80),y
+        inc     $80
+        beq     LFA0A
+        inc     $80
+        beq     LFA0C
+        rts
+
+LFA0A:  inc     $80
+LFA0C:  inc     $81
+        rts
+
+        ldy     #$06
+        jmp     L42E9
+
+        ldy     #$01
+        lda     ($80),y
+        tax
+        dey
+        lda     ($80),y
+        rts
+
+        clc
+        eor     #$FF
+        adc     #$01
+        pha
+        txa
+        eor     #$FF
+        adc     #$00
+        tax
+        lda     $82
+        eor     #$FF
+        adc     #$00
+        sta     $82
+        lda     $83
+        eor     #$FF
+        adc     #$00
+        sta     $83
+        pla
+        rts
+
+        lda     #$00
+        tax
+        ldy     #$00
+        sty     $82
+        sty     $83
+        pha
+        jsr     L4363
+        ldy     #$03
+        lda     $83
+        sta     ($80),y
+        dey
+        lda     $82
+        sta     ($80),y
+        dey
+        txa
+        sta     ($80),y
+        pla
+        dey
+        sta     ($80),y
+        rts
+
+        sta     $90
+        jsr     L440E
+        sta     $8A
+        stx     $8B
+        sta     $8C
+        stx     $8D
+        jsr     L459B
+        jsr     L440E
+        sta     $82
+        stx     $83
+        rts
+
+        jsr     L4471
+        ldx     $83
+        ldy     $90
+        cpy     #$0A
+        bne     LFAB8
+        lda     $82
+        ora     $89
+        ora     $88
+        bne     LFA98
+        cpx     #$80
+        bne     LFA98
+        ldy     #$0B
+LFA8D:  lda     $4802,y
+        sta     ($8A),y
+        dey
+        bpl     LFA8D
+        jmp     L4501
+
+LFA98:  txa
+        bpl     LFAB8
+        lda     #$2D
+        ldy     #$00
+        sta     ($8A),y
+        inc     $8A
+        bne     LFAA7
+        inc     $8B
+LFAA7:  lda     $88
+        ldx     $89
+        jsr     L4432
+        sta     $88
+        stx     $89
+        jmp     L44CD
+
+        jsr     L4471
+LFAB8:  lda     #$00
+        pha
+LFABB:  ldy     #$20
+        lda     #$00
+LFABF:  asl     $88
+        rol     $89
+        rol     $82
+        rol     $83
+        rol     a
+        cmp     $90
+        bcc     LFAD0
+        sbc     $90
+        inc     $88
+LFAD0:  dey
+        bne     LFABF
+        tay
+        lda     $47F2,y
+        pha
+        lda     $88
+        ora     $89
+        ora     $82
+        ora     $83
+        bne     LFABB
+        ldy     #$00
+LFAE4:  pla
+        sta     ($8A),y
+        beq     LFAEC
+        iny
+        bne     LFAE4
+LFAEC:  lda     $8C
+        ldx     $8D
+        rts
+
+        sta     $8E
+        txa
+        beq     LFB24
+        stx     $8F
+        jsr     L459B
+        tya
+        ldy     $89
+        beq     LFB27
+        sta     $90
+        ldy     #$10
+        lsr     $8F
+        ror     $8E
+LFB08:  bcc     LFB15
+        clc
+        adc     $88
+        tax
+        lda     $89
+        adc     $90
+        sta     $90
+        txa
+LFB15:  ror     $90
+        ror     a
+        ror     $8F
+        ror     $8E
+        dey
+        bne     LFB08
+        lda     $8E
+        ldx     $8F
+        rts
+
+LFB24:  jmp     L454D
+
+LFB27:  stx     $89
+        ldy     $88
+        ldx     $8E
+        stx     $88
+        sty     $8E
+        ldy     #$08
+        jmp     L4557
+
+        sta     $8E
+        jsr     L459B
+        tya
+        ldy     #$08
+        ldx     $89
+        beq     LFB5F
+        sta     $8F
+        lsr     $8E
+LFB46:  bcc     LFB53
+        clc
+        adc     $88
+        tax
+        lda     $89
+        adc     $8F
+        sta     $8F
+        txa
+LFB53:  ror     $8F
+        ror     a
+        ror     $8E
+        dey
+        bne     LFB46
+        tax
+        lda     $8E
+        rts
+
+LFB5F:  lsr     $8E
+LFB61:  bcc     LFB66
+        clc
+        adc     $88
+LFB66:  ror     a
+        ror     $8E
+        dey
+        bne     LFB61
+        tax
+        lda     $8E
+        rts
+
+        ldx     #$32
+LFB72:  cmp     $489E,x
+        beq     LFB80
+        dex
+        dex
+        bne     LFB72
+        lda     #$12
+        ldx     #$00
+        rts
+
+LFB80:  lda     $489F,x
+        ldx     #$00
+        rts
+
+        ldy     #$01
+        lda     ($80),y
+        sta     $89
+        dey
+        lda     ($80),y
+        sta     $88
+        jmp     L4416
+
+        sty     $49CB
+        lda     $48EC
+        ldx     $48ED
+        jsr     L45E5
+        lda     $80
+        ldx     $81
+        clc
+        adc     $49CB
+        bcc     LFBAB
+        inx
+LFBAB:  sta     $88
+        stx     $89
+        ldy     #$01
+        lda     ($88),y
+        tax
+        dey
+        lda     ($88),y
+        jsr     L45E5
+        lda     $88
+        ldx     $89
+        jsr     L4718
+        ldy     $49CB
+        jmp     L42E9
+
+        lda     #$01
+        jmp     L45E3
+
+        lda     #$00
+        ldx     #$00
+        pha
+        lda     $80
+        sec
+        sbc     #$02
+        sta     $80
+        bcs     LFBDC
+        dec     $81
+LFBDC:  ldy     #$01
+        txa
+        sta     ($80),y
+        pla
+        dey
+        sta     ($80),y
+        rts
+
+        ldy     #$03
+        lda     $80
+        sec
+        sbc     #$02
+        sta     $80
+        bcs     LFBF3
+        dec     $81
+LFBF3:  lda     ($80),y
+        tax
+        dey
+        lda     ($80),y
+        ldy     #$00
+        sta     ($80),y
+        iny
+        txa
+        sta     ($80),y
+        rts
+
+        sta     $8A
+        stx     $8B
+        jsr     L459B
+        jsr     L440E
+        jmp     L437D
+
+        sta     $49BA
+        lda     $88
+        ldx     $89
+        sta     $49BB
+        stx     $49BC
+        lda     $8A
+        ldx     $8B
+        sta     $49BD
+        stx     $49BE
+        tya
+        ldx     #$04
+        jsr     L4940
+        bcc     LFC32
+        cmp     #$4C
+        bne     LFC3C
+LFC32:  sta     L4989
+        lda     $49BF
+        ldx     $49C0
+        rts
+
+LFC3C:  jmp     L3F2A
+
+        sta     $8A
+        stx     $8B
+        ldx     #$00
+        ldy     #$00
+LFC47:  lda     ($8A),y
+        beq     LFC53
+        iny
+        bne     LFC47
+        inc     $8B
+        inx
+        bne     LFC47
+LFC53:  tya
+        rts
+
+        sta     $88
+        stx     $89
+        sta     $8A
+        stx     $8B
+        ldy     #$00
+LFC5F:  lda     ($88),y
+        beq     LFC77
+        jsr     L433C
+        and     #$02
+        beq     LFC70
+        lda     ($88),y
+        adc     #$20
+        sta     ($88),y
+LFC70:  iny
+        bne     LFC5F
+        inc     $89
+        bne     LFC5F
+LFC77:  lda     $8A
+        ldx     $8B
+        rts
+
+        ldx     #$00
+        sta     $8E
+        stx     $8F
+        jsr     L459B
+        jsr     L46A2
+        lda     $88
+        ldx     $89
+        rts
+
+        lda     #$00
+        sta     $83
+        ldy     #$10
+        ldx     $8F
+        beq     LFCB6
+LFC97:  asl     $88
+        rol     $89
+        rol     a
+        rol     $83
+        tax
+        cmp     $8E
+        lda     $83
+        sbc     $8F
+        bcc     LFCAF
+        sta     $83
+        txa
+        sbc     $8E
+        tax
+        inc     $88
+LFCAF:  txa
+        dey
+        bne     LFC97
+        sta     $82
+        rts
+
+LFCB6:  asl     $88
+        rol     $89
+        rol     a
+        bcs     LFCC1
+        cmp     $8E
+        bcc     LFCC5
+LFCC1:  sbc     $8E
+        inc     $88
+LFCC5:  dey
+        bne     LFCB6
+        sta     $82
+        rts
+
+        ldy     #$05
+        jsr     L45FD
+        jsr     L45DC
+        ldy     #$07
+        jsr     L45FD
+        lda     $4968
+        ldx     $4969
+        jsr     L4393
+        sta     $88
+        stx     $89
+        ora     $89
+        bne     LFCF0
+        lda     #$FF
+        sta     $4964
+        bne     LFCFD
+LFCF0:  lda     $88
+        clc
+        adc     $4964
+        sta     $4964
+        txa
+        adc     $4965
+LFCFD:  sta     $4965
+        jmp     L4424
+
+        pha
+        lda     #$00
+        sta     $4964
+        sta     $4965
+        ldy     #$02
+        lda     ($80),y
+        sta     $4968
+        lda     #$64
+        sta     ($80),y
+        iny
+        lda     ($80),y
+        sta     $4969
+        lda     #$49
+        sta     ($80),y
+        pla
+        jsr     L402D
+        lda     $4964
+        ldx     $4965
+        rts
+
+        jsr     L4617
+        bcs     LFD96
+        tax
+        lda     $4921,y
+        and     #$02
+        beq     LFD94
+        txa
+        bmi     LFD60
+        lda     $4921,y
+        and     #$40
+        beq     LFD58
+        stx     $49BA
+        lda     #$D1
+        ldx     #$02
+        jsr     L4940
+        bcs     LFD99
+        lda     #$CE
+        ldx     #$02
+        jsr     L4940
+        bcs     LFD99
+LFD58:  lda     $4920,y
+        ldy     #$CB
+        jmp     L4624
+
+LFD60:  ldx     $8A
+        lda     $8B
+        stx     $49BF
+        sta     $49C0
+        ora     $8A
+        beq     LFD8F
+        ldy     #$00
+LFD70:  lda     ($88),y
+        cmp     #$0A
+        bne     LFD78
+        lda     #$0D
+LFD78:  ora     #$80
+        cmp     #$E0
+        bcc     LFD80
+        and     #$DF
+LFD80:  jsr     L2034
+        iny
+        bne     LFD88
+        inc     $89
+LFD88:  dex
+        bne     LFD70
+        dec     $8B
+        bpl     LFD70
+LFD8F:  lda     #$00
+        jmp     L4647
+
+LFD94:  lda     #$07
+LFD96:  jmp     L3F20
+
+LFD99:  jmp     L3F2A
+
+        lda     #$89
+        sta     $88
+        lda     #$49
+        sta     $89
+        lda     #$00
+        tay
+        ldx     #$00
+        .byte   $F0
+LFDAA:  asl     a
+LFDAB:  sta     ($88),y
+        iny
+        bne     LFDAB
+        inc     $89
+        dex
+        bne     LFDAB
+LFDB5:  cpy     #$43
+        beq     LFDBE
+        sta     ($88),y
+        iny
+        bne     LFDB5
+LFDBE:  rts
+
+        pha
+        adc     $6C
+        jmp     (L2C6F)
+
+        jsr     L6F57
+        .byte   $72
+        jmp     (L2164)
+
+        asl     a
+        brk
+        lsr     a
+        adc     $6C
+        jmp     (L2C6F)
+
+        jsr     L6F57
+        .byte   $72
+        jmp     (L2164)
+
+        asl     a
+        brk
+        bmi     LFE10
+        .byte   $32
+        .byte   $33
+        .byte   $34
+        and     $36,x
+        .byte   $37
+        sec
+        and     $4241,y
+        .byte   $43
+        .byte   $44
+        eor     $46
+LFDED:  and     $3132
+        .byte   $34
+        .byte   $37
+        .byte   $34
+        sec
+        .byte   $33
+        rol     $34,x
+        sec
+        brk
+        .byte   $04
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        ora     ($02,x)
+        .byte   $0C
+        ora     #$0A
+        bpl     LFE48
+        bvc     LFDAA
+        bne     LFE72
+        ror     $66
+        ror     $A6
+LFE10:  dey
+        dey
+        ror     $66
+        ror     $66
+        ror     $66
+        ror     $66
+        ror     $09
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        .byte   $33
+        .byte   $33
+        .byte   $33
+        .byte   $33
+        .byte   $33
+        brk
+        brk
+        brk
+        bvc     LFE82
+        eor     $25,x
+        .byte   $22
+        .byte   $22
+        .byte   $22
+        .byte   $22
+        .byte   $22
+        .byte   $22
+        .byte   $22
+        .byte   $22
+        .byte   $22
+        .byte   $02
+        brk
+        brk
+        rti
+
+        .byte   $44
+        .byte   $44
+        .byte   $14
+        ora     ($11),y
+        ora     ($11),y
+        ora     ($11),y
+        ora     ($11),y
+        .byte   $11
+LFE48:  ora     (L0000,x)
+        bvs     LFEB2
+        ror     $66
+        ror     $A6
+        dey
+        dey
+        ror     $66
+        ror     $66
+        ror     $66
+        ror     $66
+        ror     $09
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        .byte   $33
+        .byte   $33
+        .byte   $33
+        .byte   $33
+        .byte   $33
+        brk
+        brk
+        brk
+        bvc     LFEC2
+        eor     $25,x
+        .byte   $22
+        .byte   $22
+        .byte   $22
+LFE72:  .byte   $22
+        .byte   $22
+        .byte   $22
+        .byte   $22
+        .byte   $22
+        .byte   $22
+        .byte   $02
+        brk
+        brk
+        rti
+
+        .byte   $44
+        .byte   $44
+        .byte   $14
+        ora     ($11),y
+        .byte   $11
+LFE82:  ora     ($11),y
+        ora     ($11),y
+        ora     ($11),y
+        ora     (L0000,x)
+        bvs     LFE8D
+        .byte   $0D
+LFE8D:  .byte   $04
+        .byte   $07
+        and     $02
+        .byte   $27
+        .byte   $0B
+        plp
+        .byte   $04
+        .byte   $2B
+        .byte   $03
+        .byte   $2F
+        .byte   $04
+        rti
+
+        .byte   $07
+        .byte   $42
+        ora     $43
+        .byte   $07
+        .byte   $44
+        ora     ($45,x)
+        ora     ($46,x)
+        ora     ($47,x)
+        ora     #$48
+        php
+        eor     #$08
+        lsr     a
+        ora     ($4B),y
+        .byte   $07
+        eor     $4E0E
+LFEB2:  .byte   $03
+        bvc     LFEBC
+        .byte   $52
+        .byte   $04
+        .byte   $53
+        .byte   $0F
+        eor     $05,x
+        .byte   $56
+LFEBC:  .byte   $07
+        brk
+        ora     (L0000,x)
+        ora     ($01,x)
+LFEC2:  brk
+        .byte   $02
+        ora     (L0000,x)
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        .byte   $D2
+        pha
+        cmp     $48,x
+        cld
+        pha
+        jmp     L0000
+
+        brk
+        brk
+        brk
+        brk
+        sta     $4905
+        stx     $4906
+        sta     $490C
+        stx     $490D
+LFEEE:  dey
+        lda     LFFFF,y
+        sta     $4916
+        dey
+        lda     LFFFF,y
+        sta     $4915
+        sty     $4918
+        jsr     LFFFF
+        ldy     #$FF
+        bne     LFEEE
+        rts
+
+        jmp     L03D0
+
+        brk
+        .byte   $80
+        ora     (L0000,x)
+        brk
+        .byte   $80
+        .byte   $02
+        brk
+        brk
+        .byte   $80
+        .byte   $02
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        sta     $4954
+        stx     $49B9
+        lda     $491F
+        beq     LFF4B
+        lda     $4E
+        pha
+        lda     $4F
+        pha
+        jsr     LBF00
+        brk
+        lda     $AA49,y
+        pla
+        sta     $4F
+        pla
+        sta     $4E
+        txa
+        rts
+
+LFF4B:  lda     #$01
+        sec
+        rts
+
+        brk
+        brk
+        cpx     #$46
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        brk
+        ldy     #$02
+        beq     LFF7F
+        lda     #$13
+        ldx     #$4A
+        jmp     L48F7
+
+LFF7F:  rts
+
+        ldx     #$19
+LFF82:  lda     $80,x
+        sta     $496C,x
+        dex
+        bpl     LFF82
+        ldx     #$02
+LFF8C:  lda     $03F2,x
+        sta     $4986,x
+        dex
+        bpl     LFF8C
+        ldy     LBF00
+        cpy     #$4C
+        bne     LFFB3
+        lda     $BF6F
+        cmp     #$01
+        bne     LFFB3
+        lda     #$32
+        ldx     #$43
+        sta     $491D
+        stx     $491E
+        lda     #$00
+        ldx     #$BF
+        bne     LFFB7
+LFFB3:  lda     $73
+        ldx     $74
+LFFB7:  sta     $80
+        stx     $81
+        ldx     #$0C
+        lda     #$20
+        jsr     L4326
+        jsr     L4989
+        bit     $C081
+        bit     $C081
+        lda     #$15
+        ldy     #$4A
+        sta     $9B
+        sty     $9C
+        lda     #$15
+        ldy     #$4A
+        sta     $96
+        sty     $97
+        lda     #$00
+        ldy     #$D4
+        sta     $94
+        sty     $95
+        jsr     LD39A
+        bit     $C080
+        rts
+
+        lda     LBF00
+        cmp     #$4C
+        bne     LFFFD
+        lda     $BFFF
+        cmp     #$10
+        bcs     LFFFA
+        ora     #$10
+LFFFA:  sta     $491F
+LFFFD:  rts
+
+        .byte   $FF
+LFFFF:  .byte   $49

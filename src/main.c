@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "../include/note.h"
-#include "../include/subtract_sandbox.h"
+// #include "../include/note.h"
+// #include "../include/subtract_sandbox.h"
 
-void jello(void);
+void note(void);
 
 int main(void)
 {
-  printf("Hello, World!\n");
-  jello();
-  // note(0);
+  
+  note();
 
   while(true){};
   return 0;
