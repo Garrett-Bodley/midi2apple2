@@ -39,16 +39,23 @@ Note1:
   nop
   .ENDREP
   bit $C030
+  jmp ($00)
 l0:
   cpx #0
   bne l1
-  jmp Note0
+  lda #<Note0
+  sta $00
+  lda #>Note0
+  sta $01
 l1:
   cpx #1
   bne l2
-  jmp Note1
+  lda #<Note1
+  sta $00
+  lda #>Note1
+  sta $01
 l2:
-  rts
+  jmp ($00)
 
 
 

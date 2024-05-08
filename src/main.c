@@ -8,7 +8,7 @@ void note(void);
 
 int main(void)
 {
-  
+  // u_int16_t* jump_table = 0x2000;
   note();
 
   while(true){};
