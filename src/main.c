@@ -31,9 +31,8 @@ int main(void)
 
   // asm("lda $64");
   // asm("jsr $fca8");
-  subtract_sandbox();
-  while(true){};
-  // note(0);
+  // note(which_note)
+  note(0);
   while(true){
     asm("BIT $C030");
     asm("BIT $C030");
