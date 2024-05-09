@@ -95,14 +95,27 @@ void init_notes()
   notes[0] = 0;
 }
 
-void play_note(uint8_t note_num, uint8_t duration)
+void play_note(uint8_t note_num, uint8_t duration1, uint8_t duration2)
 {
   uint16_t* jump_address = 0x00;
-  uint16_t* duration_ptr = 0x02;
+  uint8_t* duration_ptr1 = (uint8_t*)0x02;
+  uint8_t* duration_ptr2 = (uint8_t*)0x03;
+
+
   *jump_address = ((uint16_t)note) + notes[note_num];
-  *duration_ptr = duration;
+  *duration_ptr1 = duration1;
+  *duration_ptr2 = duration2;
+
   note();
 }
+
+// void play_two_notes(uint8_t note1, uint8_t note2)
+// {
+//   while(true){
+//     play_note(note1, 1);
+//     play_note(note2, 1);
+//   }
+// }
 
 void play_rest(int count)
 {
@@ -117,30 +130,12 @@ int main(void)
 {
   int i;
   init_notes();
-  for(i = 0; i < 62; i++){
-    play_note(i, 40);
+  for(i = 61; i >= 0; i--){
+    play_note(i, 25, 0);
   }
-  // play_note(0, 10);
-  // play_rest(10);
-  // play_note(1, 10);
-  // play_rest(10);
-  // play_note(0, 10);
-  // play_rest(10);
-  // play_note(0, 10);
-  // play_rest(10);
-  // play_note(0, 10);
-  // play_rest(10);
-  // play_note(0, 10);
-  // play_rest(10);
-  // play_note(0, 10);
-  // play_note(0, 10);
-  // play_note(0, 10);
-  // play_note(0, 10);
-  // play_note(0, 10);
-  // play_note(0, 10);
-  // play_note(0, 10);
-  // play_note(0, 10);
 
+
+  // play_two_notes(20, 45);
   while(true){};
   return 0;
 }

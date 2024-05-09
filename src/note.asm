@@ -28,10 +28,19 @@ _note:
   nop
   .ENDREP
   bit $C030
+TwoHundredInner:
   dec $02
-  beq Exit
+  beq TwoHundredOuter
   jmp ($00)
-Exit:
+TwoHundredOuter:
+  lda $00 ; Check if TwoHundredOuter register value is 0
+  cmp $03
+  beq exit
+  ldx #25 ; Set TwoHundredInner register value to 25
+  stx $02
+  dec $03
+  jmp ($00)
+exit:
   rts
 
 _rest:
