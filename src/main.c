@@ -103,7 +103,21 @@ void play_note(uint8_t note_num, uint16_t duration)
   *jump_address = ((uint16_t)note) + notes[note_num];
   *dur_ptr = duration;
 
+  // printf("0x00: %d     \n", *((uint8_t*)0x00));
+  // printf("0x01: %d     \n", *((uint8_t*)0x01));
+  // printf("0x02: %d     \n", *((uint8_t*)0x02));
+  // printf("0x03: %d     \n", *((uint8_t*)0x03));
+  // printf("0x04: %d     \n", *((uint8_t*)0x04));
+  // printf("0x05: %d     \n", *((uint8_t*)0x05));
+
   note();
+  // printf("\nAfter note has played:\n");
+  // printf("0x00: %d     \n", *((uint8_t*)0x00));
+  // printf("0x01: %d     \n", *((uint8_t*)0x01));
+  // printf("0x02: %d     \n", *((uint8_t*)0x02));
+  // printf("0x03: %d     \n", *((uint8_t*)0x03));
+  // printf("0x04: %d     \n", *((uint8_t*)0x04));
+  // printf("0x05: %d     \n", *((uint8_t*)0x05));
 }
 
 // void play_two_notes(uint8_t note1, uint8_t note2)
@@ -127,11 +141,12 @@ int main(void)
 {
   int i;
   init_notes();
-  for(i = 60; i >= 0; i--){
-    play_note(i, 1);
-  }
+  play_note(40, 0xffff);
+  // for(i = 60; i >= 0; i--){
+  //   play_note(i, 0xffff);
+  // }
 
-
+  printf("done! :D");
   // play_two_notes(20, 45);
   while(true){};
   return 0;

@@ -29,12 +29,16 @@ _note:
   .ENDREP
   bit $C030
 Inner:
-  dec $03
+  ldx #00
+  cpx $02
   beq Outer
+  dec $02
   jmp ($00)
 Outer:
-  dec $02
+  ldx #00
+  cpx $03
   beq exit
+  dec $03
   jmp ($00)
 exit:
   rts
