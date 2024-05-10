@@ -95,16 +95,14 @@ void init_notes()
   notes[0] = 0;
 }
 
-void play_note(uint8_t note_num, uint8_t duration1, uint8_t duration2)
+void play_note(uint8_t note_num, uint16_t duration)
 {
   uint16_t* jump_address = 0x00;
-  uint8_t* duration_ptr1 = (uint8_t*)0x02;
-  uint8_t* duration_ptr2 = (uint8_t*)0x03;
+  uint16_t* dur_ptr = 0x02;
 
 
   *jump_address = ((uint16_t)note) + notes[note_num];
-  *duration_ptr1 = duration1;
-  *duration_ptr2 = duration2;
+  *dur_ptr = duration;
 
   note();
 }
@@ -131,7 +129,7 @@ int main(void)
   int i;
   init_notes();
   for(i = 61; i >= 0; i--){
-    play_note(i, 25, 0);
+    play_note(i, 1);
   }
 
 
@@ -139,3 +137,5 @@ int main(void)
   while(true){};
   return 0;
 }
+
+// ............... ........... .......  ...... .. ...... .. .. ....... ....
