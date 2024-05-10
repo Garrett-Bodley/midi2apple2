@@ -28,11 +28,11 @@ _note:
   nop
   .ENDREP
   bit $C030
-TwoHundredInner:
+Inner:
   dec $03
-  beq TwoHundredOuter
+  beq Outer
   jmp ($00)
-TwoHundredOuter:
+Outer:
   dec $02
   beq exit
   jmp ($00)

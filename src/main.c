@@ -83,12 +83,12 @@ uint16_t frequencies[] = {
   2093,
 };
 
-uint16_t notes[62];
+uint16_t notes[61];
 
 void init_notes()
 {
   int i;
-  for(i = 0; i < 62; i++)
+  for(i = 0; i < 61; i++)
   {
     notes[i] = 3902 - (1023000/frequencies[i]/2/2 - 9);
   }
@@ -99,7 +99,6 @@ void play_note(uint8_t note_num, uint16_t duration)
 {
   uint16_t* jump_address = 0x00;
   uint16_t* dur_ptr = 0x02;
-
 
   *jump_address = ((uint16_t)note) + notes[note_num];
   *dur_ptr = duration;
@@ -128,7 +127,7 @@ int main(void)
 {
   int i;
   init_notes();
-  for(i = 61; i >= 0; i--){
+  for(i = 60; i >= 0; i--){
     play_note(i, 1);
   }
 
