@@ -23,28 +23,57 @@
 .segment	"CODE"
 ; receive integer argument note 0-61
 ; wall of nop
+; Duration arg stored at 0x02
+; Low bits at 0x02
+; High bits at 0x03
 _note:
   .REPEAT 3902
   nop
   .ENDREP
   bit $C030
-Inner:
+NoteLowBits:
   ldx #00
   cpx $02
-  beq Outer
-  dec $02
-  jmp ($00)
-Outer:
-  ldx #00
-  cpx $03
-  beq exit
-  dec $03
-  jmp ($00)
-exit:
+  beq NoteHighBits
+  ; nop ; pad so NoteLowBits and NoteHighBits take the (roughly) same amount of time
+  ; nop
+  ; nop
+  ; nop
+  dec $02  ;5
+  jmp ($00) ;5
+NoteHighBits:
+  dec $02  ;5
+  ldx #00 ;2
+  cpx $03 ;3
+  beq NoteExit ;2
+  dec $03 ;5
+  jmp ($00) ;5
+NoteExit:
   rts
 
+
+; Duration arg stored at 0x04
+; Low bits at 0x04
+; High bits at 0x05
 _rest:
   .REPEAT 1000
   nop
   .ENDREP
+RestLowBits:
+  ldx #00
+  cpx $04
+  beq RestHighBits
+  nop
+  nop
+  nop
+  nop
+  dec $04
+  jmp _rest
+RestHighBits:
+  ldx #00
+  cpx $05
+  beq RestExit
+  dec $05
+  jmp _rest
+RestExit:
   rts

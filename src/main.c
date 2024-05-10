@@ -1,9 +1,8 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <stdint.h>
+#include <stdbool.h>
 
-// #include "../include/note.h"
-// #include "../include/subtract_sandbox.h"
+#include "../include/song.h"
 
 extern void rest(void);
 extern void note(void);
@@ -102,54 +101,21 @@ void play_note(uint8_t note_num, uint16_t duration)
 
   *jump_address = ((uint16_t)note) + notes[note_num];
   *dur_ptr = duration;
-
-  // printf("0x00: %d     \n", *((uint8_t*)0x00));
-  // printf("0x01: %d     \n", *((uint8_t*)0x01));
-  // printf("0x02: %d     \n", *((uint8_t*)0x02));
-  // printf("0x03: %d     \n", *((uint8_t*)0x03));
-  // printf("0x04: %d     \n", *((uint8_t*)0x04));
-  // printf("0x05: %d     \n", *((uint8_t*)0x05));
-
   note();
-  // printf("\nAfter note has played:\n");
-  // printf("0x00: %d     \n", *((uint8_t*)0x00));
-  // printf("0x01: %d     \n", *((uint8_t*)0x01));
-  // printf("0x02: %d     \n", *((uint8_t*)0x02));
-  // printf("0x03: %d     \n", *((uint8_t*)0x03));
-  // printf("0x04: %d     \n", *((uint8_t*)0x04));
-  // printf("0x05: %d     \n", *((uint8_t*)0x05));
 }
 
-// void play_two_notes(uint8_t note1, uint8_t note2)
-// {
-//   while(true){
-//     play_note(note1, 1);
-//     play_note(note2, 1);
-//   }
-// }
-
-void play_rest(int count)
+void play_rest(uint16_t duration)
 {
-  while(count > 0){
-    rest();
-    --count;
-  }
+  uint16_t* dur_ptr = 0x04;
+  *dur_ptr = duration;
+  rest();
 }
-
 
 int main(void)
 {
-  int i;
   init_notes();
-  play_note(40, 0xffff);
-  // for(i = 60; i >= 0; i--){
-  //   play_note(i, 0xffff);
-  // }
+  song();
 
-  printf("done! :D");
-  // play_two_notes(20, 45);
   while(true){};
   return 0;
 }
-
-// ............... ........... .......  ...... .. ...... .. .. ....... ....
