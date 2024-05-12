@@ -27,30 +27,79 @@
 ; Low bits at 0x02
 ; High bits at 0x03
 _note:
-  .REPEAT 3902
+  .REPEAT 3859 ; 3902 - 43 (86 cycle padding to account for work checking duration values)
   nop
   .ENDREP
   bit $C030
-NoteLowBits:
-  ldx #00
-  cpx $02
-  beq NoteHighBits
-  ; nop ; pad so NoteLowBits and NoteHighBits take the (roughly) same amount of time
-  ; nop
-  ; nop
-  ; nop
+
+; This whole thing takes *roughly* 86 cycles
+
+Note0_7: ; 18 cycles (not accounting for padding)
+  ldx #00 ;2
+  cpx $02 ;3
+  bne SkipTiming0_7 ;2 if no branch, 3 if taken
+  ; ONLY IF 0
+  .REPEAT 4 ; 4 x 2 = 8 timing cycles
+  nop
+  .ENDREP
+  jmp Note8_15 ;3
+SkipTiming0_7:
+  .REPEAT 34 ; Pad 68 cycles to account for outer loop lengths
+  nop
+  .ENDREP
   dec $02  ;5
   jmp ($00) ;5
-NoteHighBits:
+
+Note8_15: ; 23 cycles (not accounting for padding)
   dec $02  ;5
   ldx #00 ;2
   cpx $03 ;3
-  beq NoteExit ;2
+  bne SkipTiming8_15 ;2 if no branch, 3 if taken
+  .REPEAT 4 ; 4 x 2 = 8 timing cycles
+  nop
+  .ENDREP
+  jmp Note16_23 ;3 if taken
+SkipTiming8_15:
+  .REPEAT 22 ; Pad 44 cycles to account for outer loop lengths
+  nop
+  .ENDREP
   dec $03 ;5
   jmp ($00) ;5
-NoteExit:
-  rts
 
+Note16_23: ;23 cycles (not accounting for padding)
+  dec $03  ;5
+  ldx #00 ;2
+  cpx $04 ;3
+  bne SkipTiming16_23 ;2 if no branch, 3 if taken
+  .REPEAT 4
+  nop
+  .ENDREP
+  jmp Note24_31 ; 3
+SkipTiming16_23:
+  .REPEAT 11 ; Pad 22 cycles to account for outer loop length
+  nop
+  .ENDREP
+  dec $04 ;5
+  jmp ($00) ;5
+
+Note24_31:  ;13 if 0, otherwise 22  (not accounting for padding)
+  dec $04  ;5
+  ldx #00 ;2
+  cpx $05 ;3
+  beq NoteExit ;2 if no branch, 3 if taken
+  dec $05 ;5
+  jmp ($00) ;5
+NoteExit:
+  rts ;6
+
+; TODO:
+; -Fix this timing issue
+  ; 18 cycles only low bits
+  ; 18 + 23 if low_8 is 0 and mid_left_8 is not zero
+  ; 18 + 23 + 23 if low_8 is 0 and mid_right_8 is not zero
+  ; 18 + 23 + 23 + 22 if low_8 through mid_right_8 is zero and high_8 not zero
+  ; 18 + 23 + 23 + 13 if all are zero
+; - Tune main loop to account for checking duration values (subtract a constant)
 
 ; Duration arg stored at 0x04
 ; Low bits at 0x04

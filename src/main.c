@@ -94,13 +94,14 @@ void init_notes()
   notes[0] = 0;
 }
 
-void play_note(uint8_t note_num, uint16_t duration)
+void play_note(uint8_t note_num, uint32_t duration)
 {
   uint16_t* jump_address = 0x00;
-  uint16_t* dur_ptr = 0x02;
+  uint32_t* dur_ptr = 0x02;
 
   *jump_address = ((uint16_t)note) + notes[note_num];
   *dur_ptr = duration;
+
   note();
 }
 
