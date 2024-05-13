@@ -89,7 +89,7 @@ void init_notes()
   int i;
   for(i = 0; i < 61; i++)
   {
-    notes[i] = 3902 - (1023000/frequencies[i]/2/2 - 9);
+    notes[i] = 3850 - (1023000/frequencies[i]/2/2 - 9);
   }
   notes[0] = 0;
 }
@@ -114,8 +114,13 @@ void play_rest(uint16_t duration)
 
 int main(void)
 {
+  int i;
   init_notes();
-  song();
+  play_note(1, 0xffffffff);
+  for(i = 60; i >= 0; i--){
+    play_note(i, 1000);
+  }
+  // song();
 
   while(true){};
   return 0;

@@ -27,7 +27,8 @@
 ; Low bits at 0x02
 ; High bits at 0x03
 _note:
-  .REPEAT 3859 ; 3902 - 43 (86 cycle padding to account for work checking duration values)
+  ; Tuning is off and I'm not entirely sure why.
+  .REPEAT 4025 ; 3902 - 43 (86 cycle padding to account for work checking duration values)
   nop
   .ENDREP
   bit $C030
