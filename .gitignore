@@ -1,5 +1,7 @@
 bin
 obj
 
+src/song.c
+
 .DS_Store
 .vscode

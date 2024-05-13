@@ -30,7 +30,7 @@
 _note:
   ; Tuning is off and I'm not entirely sure why.
   ; Too many nops
-  .REPEAT 8192 ; 3902 - 43 (86 cycle padding to account for work checking duration values)
+  .REPEAT 4096 ; 3902 - 43 (86 cycle padding to account for work checking duration values)
   nop
   .ENDREP
 _end_note:
@@ -96,39 +96,36 @@ Note24_31:  ;13 if 0, otherwise 22  (not accounting for padding)
 NoteExit:
   rts ;6
 
-; TODO:
-; -Fix this timing issue
-  ; 18 cycles only low bits
-  ; 18 + 23 if low_8 is 0 and mid_right_8 is not zero
-  ; 18 + 23 + 23 if low_8 is 0 and mid_left_8 is not zero
-  ; 18 + 23 + 23 + 22 if low_8 through mid_left_8 is zero and high_8 not zero
-  ; 18 + 23 + 23 + 13 if all are zero
-; - Tune main loop to account for checking duration values (subtract a constant)
+; Duration arg stored at 0x06
+; Low bits at 0x06
+; High bits at 0x07
 
-; 0000 0000 0000 0000
-
-; Duration arg stored at 0x04
-; Low bits at 0x04
-; High bits at 0x05
+; 2000 cycles total
 _rest:
-  .REPEAT 1000
+  .REPEAT 981
   nop
   .ENDREP
-RestLowBits:
-  ldx #00
-  cpx $04
-  beq RestHighBits
+RestLowBits: ; 16 cycles always
+  ldx #00 ;2
+  cpx $06 ;3
+  bne SkipTimingRestLow ;2 if no branch, 3 if taken
+  .REPEAT 3
   nop
+  .ENDREP
+  jmp RestHighBits ;3 + (however many RestHighBits cycles)
+SkipTimingRestLow:
+  .REPEAT 11 ; pad to account for Rest HighBits
   nop
-  nop
-  nop
-  dec $04
-  jmp _rest
-RestHighBits:
-  ldx #00
-  cpx $05
-  beq RestExit
-  dec $05
-  jmp _rest
+  .ENDREP
+  dec $06 ;5
+  jmp _rest ;3
+
+RestHighBits: ; 22 cycles when not zero (who cares about 0 (not me!))
+  dec $06 ;5
+  ldx #00 ;2
+  cpx $07 ;3
+  beq RestExit ;2 if no branch, 3 if taken
+  dec $07 ;5
+  jmp _rest ;5
 RestExit:
   rts

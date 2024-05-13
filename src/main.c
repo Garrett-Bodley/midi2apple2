@@ -109,7 +109,7 @@ void play_note(uint8_t note_num, uint32_t duration)
 
 void play_rest(uint16_t duration)
 {
-  uint16_t* dur_ptr = (uint16_t*) 0x04;
+  uint16_t* dur_ptr = (uint16_t*) 0x06;
   *dur_ptr = duration;
   rest();
 }
@@ -121,10 +121,10 @@ int main(void)
   // play_note(0, 0xffffffff);
   // printf("note: %d\n", note);
   // printf("end_note: %d\n", end_note);
-  for(i = 0; i < 61; i++){
-    // printf("%d = %d\n", i, notes[i]);
-    play_note(i, 50);
-  }
+  // for(i = 0; i < 61; i++){
+  //   // printf("%d = %d\n", i, notes[i]);
+  //   play_note(i, 50);
+  // }
   song();
 
   while(true){};
