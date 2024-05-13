@@ -13,6 +13,7 @@
 	.forceimport	__STARTUP__
 	.export		_note
 	.export		_rest
+  .export _end_note
 
 .segment	"RODATA"
 
@@ -28,9 +29,11 @@
 ; High bits at 0x03
 _note:
   ; Tuning is off and I'm not entirely sure why.
-  .REPEAT 4025 ; 3902 - 43 (86 cycle padding to account for work checking duration values)
+  ; Too many nops
+  .REPEAT 8000 ; 3902 - 43 (86 cycle padding to account for work checking duration values)
   nop
   .ENDREP
+_end_note:
   bit $C030
 
 ; This whole thing takes *roughly* 86 cycles
@@ -96,11 +99,13 @@ NoteExit:
 ; TODO:
 ; -Fix this timing issue
   ; 18 cycles only low bits
-  ; 18 + 23 if low_8 is 0 and mid_left_8 is not zero
-  ; 18 + 23 + 23 if low_8 is 0 and mid_right_8 is not zero
-  ; 18 + 23 + 23 + 22 if low_8 through mid_right_8 is zero and high_8 not zero
+  ; 18 + 23 if low_8 is 0 and mid_right_8 is not zero
+  ; 18 + 23 + 23 if low_8 is 0 and mid_left_8 is not zero
+  ; 18 + 23 + 23 + 22 if low_8 through mid_left_8 is zero and high_8 not zero
   ; 18 + 23 + 23 + 13 if all are zero
 ; - Tune main loop to account for checking duration values (subtract a constant)
+
+; 0000 0000 0000 0000
 
 ; Duration arg stored at 0x04
 ; Low bits at 0x04

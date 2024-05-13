@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include <assert.h>
 
 #include "../include/song.h"
 
+#define CYCLE_OVERHEAD 86
+#define NOP_CYCLE_COUNT 2
+
 extern void rest(void);
 extern void note(void);
+extern void * end_note;
 
 
 // NOP takes 2 clock cycles
@@ -89,25 +94,28 @@ void init_notes()
   int i;
   for(i = 0; i < 61; i++)
   {
-    notes[i] = 3850 - (1023000/frequencies[i]/2/2 - 9);
+    notes[i] =  (1023000/frequencies[i]/2 - CYCLE_OVERHEAD) / NOP_CYCLE_COUNT;
   }
-  notes[0] = 0;
+  // notes[0] = ;
 }
 
 void play_note(uint8_t note_num, uint32_t duration)
 {
-  uint16_t* jump_address = 0x00;
-  uint32_t* dur_ptr = 0x02;
+  volatile uint16_t* jump_address = (uint16_t*) 0x00;
+  volatile uint32_t* dur_ptr = (uint32_t*) 0x02;
 
-  *jump_address = ((uint16_t)note) + notes[note_num];
+  *jump_address = ((uint16_t)end_note) - notes[note_num];
   *dur_ptr = duration;
-
+  printf("notes[note_num]: %d\n *jump address: %x\n end_note: %x\n note: %x\n end_note - note: %d\n",
+    notes[note_num], *jump_address, end_note, note, (uint16_t)end_note - (uint16_t)note
+  );
+  // assert(*jump_address < (uint16_t)end_note - (uint16_t)note);
   note();
 }
 
 void play_rest(uint16_t duration)
 {
-  uint16_t* dur_ptr = 0x04;
+  uint16_t* dur_ptr = (uint16_t*) 0x04;
   *dur_ptr = duration;
   rest();
 }
@@ -116,9 +124,11 @@ int main(void)
 {
   int i;
   init_notes();
-  play_note(1, 0xffffffff);
-  for(i = 60; i >= 0; i--){
-    play_note(i, 1000);
+  // printf("note: %d\n", note);
+  // printf("end_note: %d\n", end_note);
+  for(i = 0; i < 3; i++){
+    printf("%d = %d\n", i, notes[i]);
+    play_note(i, 10);
   }
   // song();
 

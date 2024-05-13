@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    midilib (4.0.2)
+
+PLATFORMS
+  arm64-darwin-23
+  ruby
+
+DEPENDENCIES
+  midilib (~> 4.0)
+
+BUNDLED WITH
+   2.5.9

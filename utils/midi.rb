@@ -19,7 +19,7 @@ end
 
 # Initialize default tempo (120 BPM)
 default_tempo = 500000  # Microseconds per beat
-
+# binding.pry
 seq.each do |track|
   puts "*** Track Name: \"#{track.name}\""
   puts "Instrument Name: \"#{track.instrument}\""
