@@ -10,7 +10,7 @@
 
 extern void rest(void);
 extern void note(void);
-extern void * end_note;
+extern void end_note(void);
 
 
 // NOP takes 2 clock cycles
@@ -18,8 +18,6 @@ extern void * end_note;
 // Clock Speed/Desired Note frequency/2/2 (cycles per NOP) - 2 (4 cycle offset for BIT) = How many NOPS to play this frequency
 // -9 offset for overhead after BIT
 // jump offset = longest cycle count - cycles needed for current note
-
-
 
 // BIT takes 4 cycles
 
@@ -96,7 +94,6 @@ void init_notes()
   {
     notes[i] =  (1023000/frequencies[i]/2 - CYCLE_OVERHEAD) / NOP_CYCLE_COUNT;
   }
-  // notes[0] = ;
 }
 
 void play_note(uint8_t note_num, uint32_t duration)
@@ -106,10 +103,7 @@ void play_note(uint8_t note_num, uint32_t duration)
 
   *jump_address = ((uint16_t)end_note) - notes[note_num];
   *dur_ptr = duration;
-  printf("notes[note_num]: %d\n *jump address: %x\n end_note: %x\n note: %x\n end_note - note: %d\n",
-    notes[note_num], *jump_address, end_note, note, (uint16_t)end_note - (uint16_t)note
-  );
-  // assert(*jump_address < (uint16_t)end_note - (uint16_t)note);
+
   note();
 }
 
@@ -124,13 +118,14 @@ int main(void)
 {
   int i;
   init_notes();
+  // play_note(0, 0xffffffff);
   // printf("note: %d\n", note);
   // printf("end_note: %d\n", end_note);
-  for(i = 0; i < 3; i++){
-    printf("%d = %d\n", i, notes[i]);
-    play_note(i, 10);
+  for(i = 0; i < 61; i++){
+    // printf("%d = %d\n", i, notes[i]);
+    play_note(i, 50);
   }
-  // song();
+  song();
 
   while(true){};
   return 0;

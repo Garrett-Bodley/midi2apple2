@@ -13,7 +13,7 @@
 	.forceimport	__STARTUP__
 	.export		_note
 	.export		_rest
-  .export _end_note
+	.export		_end_note
 
 .segment	"RODATA"
 
@@ -30,7 +30,7 @@
 _note:
   ; Tuning is off and I'm not entirely sure why.
   ; Too many nops
-  .REPEAT 8000 ; 3902 - 43 (86 cycle padding to account for work checking duration values)
+  .REPEAT 8192 ; 3902 - 43 (86 cycle padding to account for work checking duration values)
   nop
   .ENDREP
 _end_note:
