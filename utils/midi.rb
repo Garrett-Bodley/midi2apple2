@@ -4,19 +4,21 @@ require 'pry-nav'
 require 'midilib/io/seqreader'
 
 raise ArgumentError, 'Usage: midi <path-to-midi-file> <BPM>' if ARGV.length != 2
-raise ArgumentError, 'Error: invalid filepath provided' unless File.exist?(ARGV.first)
-raise ArgumentError, 'Error: BPM must be a non-zero integer' unless ARGV.last.match?(/[0-9]+/)
-raise ArgumentError, 'Error: BPM must be a non-zero integer' if ARGV.last.to_i.zero?
+raise ArgumentError, "Error: #{ARGV.first} does not exist" unless File.exist?(ARGV.first)
+raise ArgumentError, "Error: BPM must be a non-zero integer, got #{ARGV.last}" unless ARGV.last.match?(/[0-9]+/)
+raise ArgumentError, "Error: BPM must be a non-zero integer, got #{ARGV.last}" unless ARGV.last.to_i.positive?
 
 midi_path = ARGV.first
 BPM = ARGV.last.to_i
 
-# C2 is 36 in midi
-
-MIDI_OFFSET = 36
-# BPM = 30
-PPQ = 480
+FileTypeError = Class.new(StandardError)
+FileNotFound = Class.new(StandardError)
 MidiError = Class.new(StandardError)
+NoteError = Class.new(StandardError)
+PPQ = 480
+
+# C2 is 36 in midi
+MIDI_OFFSET = 36
 
 WD_PATH = Pathname.new(__dir__).dirname
 
@@ -36,8 +38,9 @@ FREQUENCIES = %w[
   2093
 ].map(&:to_i).freeze
 
-# CALCULATE SECONDS PER TICK
+raise FileTypeError, "Invalid file: expected .midi extension got #{midi_path}" unless File.extname(midi_path) == '.midi'
 
+# CALCULATE SECONDS PER TICK
 def abs_time_in_milliseconds(tick_count)
   tick_count * 60_000 / (BPM * PPQ)
 end
@@ -78,7 +81,10 @@ note_track.events.filter { |e| e.is_a?(MIDI::NoteOff) }.each do |e|
     notes << [-1, abs_time_in_milliseconds(e.on.delta_time)]
   end
   e.delta_time
-  notes << [e.on.note - MIDI_OFFSET, abs_time_in_milliseconds(e.delta_time)]
+  # Clamp minimum note value
+  note_num = [e.on.note - MIDI_OFFSET, 0].max
+  note_num = [note_num, 60].min
+  notes << [note_num, abs_time_in_milliseconds(e.delta_time)]
 end
 
 song_path = WD_PATH.join('src/song.c')
