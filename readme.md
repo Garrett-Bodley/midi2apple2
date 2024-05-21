@@ -71,7 +71,7 @@ make wav
 # Generate aif file (For audio transfer protocol to Virtual ][)
 make aif
 
-# Generate dsk file (For )
+# Generate dsk file (Load a floppy on Virtual ][ or the web emulator)
 make disk
 
 # Do all of the above
