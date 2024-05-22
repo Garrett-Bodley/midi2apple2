@@ -1,3 +1,3 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "midilib", "~> 4.0"
+gem 'midilib', '~> 4.0'
